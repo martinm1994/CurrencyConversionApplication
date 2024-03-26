@@ -10,6 +10,8 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -20,6 +22,8 @@ import com.exchange.CurrencyConversionApplication.repository.TransactionReposito
 
 @Service
 public class CurrencyConversionService {
+
+    private static final Logger logger = LoggerFactory.getLogger(CurrencyConversionService.class);
 
     @Autowired
     private TransactionRepository transactionRepository;
@@ -40,14 +44,14 @@ public class CurrencyConversionService {
 
                     return rate;
                 } else {
-                    System.err.println(
+                    logger.error(
                             "Failed to fetch exchange rate. Status code: " + response.getStatusLine().getStatusCode());
                     return null;
                 }
             }
 
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("Failed to connect to external API", e);
             return null;
         }
     }

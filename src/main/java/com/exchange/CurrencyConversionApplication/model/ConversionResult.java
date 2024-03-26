@@ -1,27 +1,21 @@
 package com.exchange.CurrencyConversionApplication.model;
 
+import java.math.BigDecimal;
+
 public class ConversionResult {
-    private Double convertedAmount;
+    private BigDecimal convertedAmount;
     private String transactionId;
 
-    public ConversionResult(Double convertedAmount, String transactionId) {
+    public ConversionResult(BigDecimal convertedAmount, String transactionId) {
         this.convertedAmount = convertedAmount;
         this.transactionId = transactionId;
     }
 
-    public Double getConvertedAmount() {
+    public BigDecimal getConvertedAmount() {
         return convertedAmount;
-    }
-
-    public void setConvertedAmount(Double convertedAmount) {
-        this.convertedAmount = convertedAmount;
     }
 
     public String getTransactionId() {
         return transactionId;
-    }
-
-    public void setTransactionId(String transactionId) {
-        this.transactionId = transactionId;
     }
 }

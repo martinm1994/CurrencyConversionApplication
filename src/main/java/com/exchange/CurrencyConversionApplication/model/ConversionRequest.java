@@ -7,6 +7,10 @@ public class ConversionRequest {
     private String sourceCurrency;
     private String targetCurrency;
 
+    public ConversionRequest() {
+        
+    }
+
     public ConversionRequest(String sourceCurrency, String targetCurrency, BigDecimal amount) {
         this.sourceCurrency = sourceCurrency;
         this.targetCurrency = targetCurrency;

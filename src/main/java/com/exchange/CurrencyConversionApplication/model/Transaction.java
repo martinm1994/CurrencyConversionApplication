@@ -86,4 +86,17 @@ public class Transaction {
         this.transactionDate = transactionDate;
     }
 
+    @Override
+    public String toString() {
+        return "Transaction{" +
+                "id=" + id +
+                ", amount=" + amount +
+                ", sourceCurrency='" + sourceCurrency + '\'' +
+                ", targetCurrency='" + targetCurrency + '\'' +
+                ", convertedAmount=" + convertedAmount +
+                ", transactionIdentifier='" + transactionIdentifier + '\'' +
+                ", transactionDate=" + transactionDate +
+                '}';
+    }
+
 }

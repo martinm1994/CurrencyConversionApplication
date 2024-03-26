@@ -14,6 +14,4 @@ public interface TransactionRepository extends JpaRepository<Transaction, Long> 
 
     Page<Transaction> findByTransactionDate(LocalDate transactionDate, Pageable pageable);
 
-    Page<Transaction> findById(Long id, Pageable pageable);
-
 }
