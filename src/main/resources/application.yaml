@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: CurrencyConversionApplication
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/transactions?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true&ServerTimezone=UTC
+    username: root
+    password: root
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
